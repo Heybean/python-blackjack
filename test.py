@@ -1,6 +1,8 @@
 import unittest
 from deck import Deck
 from player import Player
+from hand import Hand
+from card import Card
 import game
 
 class Test(unittest.TestCase):
@@ -19,6 +21,14 @@ class Test(unittest.TestCase):
         player = Player(100)
         player.modify_bank(50)
         self.assertEqual(player.bank, 150)
+
+    def test_add_card(self):
+        hand = Hand()
+        card = Card(1, 'Hearts')
+
+        hand.add_card(card)
+
+        self.assertEqual(len(hand.cards), 1)
     
     #def test_ask_bet(self):
     #    player = Player(1000)

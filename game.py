@@ -2,6 +2,8 @@
 Main game script
 '''
 from player import Player
+from hand import Hand
+from deck import Deck
 
 def ask_bet(player):
     while True:
@@ -23,4 +25,17 @@ if __name__ == "__main__":
     player = Player(1000)
     print(f'Your starting bank funds: ${player.bank}')
     while True:
+        bet = ask_bet(player)
+
+        deck = Deck()
+        deck.shuffle()
+
+        dealerHand = Hand()
+        playerHand = Hand()
+
+        # No more money
+        if (player.bank <= 0):
+            break
         break
+    else:
+        print(f'Game is over. Final amount: ${player.bank}')
