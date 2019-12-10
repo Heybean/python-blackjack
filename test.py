@@ -1,6 +1,7 @@
 import unittest
 from deck import Deck
 from player import Player
+import game
 
 class Test(unittest.TestCase):
 
@@ -18,6 +19,11 @@ class Test(unittest.TestCase):
         player = Player(100)
         player.modify_bank(50)
         self.assertEqual(player.bank, 150)
+    
+    #def test_ask_bet(self):
+    #    player = Player(1000)
+    #    amount = game.ask_bet(player)
+    #    self.assertGreater(amount, 0)
 
 if __name__ == "__main__":
     unittest.main()
