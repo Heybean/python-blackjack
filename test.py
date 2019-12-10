@@ -29,6 +29,14 @@ class Test(unittest.TestCase):
         hand.add_card(card)
 
         self.assertEqual(len(hand.cards), 1)
+
+    def test_deal(self):
+        hand = Hand()
+        deck = Deck()
+
+        game.deal_cards(deck, hand, 5)
+
+        self.assertEqual(len(hand.cards), 5)
     
     #def test_ask_bet(self):
     #    player = Player(1000)

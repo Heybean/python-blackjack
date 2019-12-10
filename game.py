@@ -6,6 +6,9 @@ from hand import Hand
 from deck import Deck
 
 def ask_bet(player):
+    '''
+    Ask player to enter a bet and returns the betting amount
+    '''
     while True:
         try:
             amount = int(input('How much do you wish to bet? '))
@@ -19,6 +22,17 @@ def ask_bet(player):
             print('Please enter a valid whole number.\n')
             continue
 
+def deal_cards(deck, hand, n = 1):
+    '''
+    Deals a number of cards to a hand.
+    INPUT
+        deck = cards to draw from
+        hand = hand to deal to
+        n = number of cards to deal from the deck. Default of 1 if no value given
+    '''
+
+    for _ in range(0, n):
+        hand.add_card(deck.deal())
 
 if __name__ == "__main__":
     print('Welcome to Blackjack!')
