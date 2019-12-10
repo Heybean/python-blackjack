@@ -11,7 +11,7 @@ class Deck():
     def __init__(self):
         self.cards = []
         for suit in ['Hearts', 'Diamonds', 'Spades', 'Clubs']:
-            for x in range(1, 15):
+            for x in range(1, 14):
                 self.cards.append(Card(x, suit))
     def shuffle(self):
         '''
