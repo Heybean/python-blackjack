@@ -52,5 +52,5 @@ class Hand():
         if hideOne:
             text[0] = '?? Hidden ??'
 
-        print(', '.join(text))
+        print('     ' + ', '.join(text))
 

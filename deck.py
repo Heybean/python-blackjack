@@ -20,6 +20,6 @@ class Deck():
         random.shuffle(self.cards)
     def deal(self):
         '''
-        Deals the top card and removes it from the deck
+        Returns the top card (end of array) and removes it from the deck
         '''
         return self.cards.pop()

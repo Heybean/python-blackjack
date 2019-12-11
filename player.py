@@ -1,7 +1,6 @@
 '''
 Module for player
 '''
-
 class Player():
     '''
     Player interface.
@@ -21,6 +20,6 @@ class Player():
         if (amount > 0):
             text = f'You gained ${amount}.'
         elif (amount < 0):
-            text = f'You lost ${amount}.'
+            text = f'You lost ${-amount}.'
 
         print(f'{text} Current bank: ${self.bank}')
