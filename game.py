@@ -34,6 +34,11 @@ def deal_cards(deck, hand, n = 1):
     for _ in range(0, n):
         hand.add_card(deck.deal())
 
+def displayStatus(dealerHand, playerHand):
+    '''
+    Displays hand status from both hands to console
+    '''
+
 if __name__ == "__main__":
     print('Welcome to Blackjack!')
     player = Player(1000)
@@ -46,6 +51,11 @@ if __name__ == "__main__":
 
         dealerHand = Hand()
         playerHand = Hand()
+
+        deal_cards(deck, dealerHand, 2)
+        deal_cards(deck, playerHand, 2)
+
+
 
         # No more money
         if (player.bank <= 0):

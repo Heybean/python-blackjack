@@ -37,6 +37,47 @@ class Test(unittest.TestCase):
         game.deal_cards(deck, hand, 5)
 
         self.assertEqual(len(hand.cards), 5)
+
+    def test_hand_count1(self):
+        hand = Hand()
+
+        hand.add_card(Card(11, 'Hearts'))
+        hand.add_card(Card(6, 'Diamonds'))
+        hand.add_card(Card(5, 'Spades'))
+
+        total = hand.value()
+        self.assertEqual(total, 21)
+
+    def test_hand_count2(self):
+        hand = Hand()
+
+        hand.add_card(Card(14, 'Clubs'))
+        hand.add_card(Card(12, 'Spades'))
+
+        total = hand.value()
+        self.assertEqual(total, 21)
+
+    def test_hand_count3(self):
+        hand = Hand()
+
+        hand.add_card(Card(14, 'Hearts'))
+        hand.add_card(Card(7, 'Clubs'))
+        hand.add_card(Card(14, 'Diamonds'))
+
+        total = hand.value()
+        self.assertEqual(total, 19)
+
+    def test_hand_display(self):
+        hand = Hand()
+
+        hand.add_card(Card(14, 'Hearts'))
+        hand.add_card(Card(7, 'Clubs'))
+        hand.add_card(Card(14, 'Diamonds'))
+        hand.add_card(Card(11, 'Hearts'))
+        hand.add_card(Card(6, 'Diamonds'))
+        hand.add_card(Card(5, 'Spades'))
+
+        hand.display()
     
     #def test_ask_bet(self):
     #    player = Player(1000)
